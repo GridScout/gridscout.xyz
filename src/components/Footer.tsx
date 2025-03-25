@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import { LINKS } from "~/lib/constants";
 
 const Footer = () => {
   return (
@@ -30,7 +31,7 @@ const Footer = () => {
                 <li>
                   <Link
                     target="_blank"
-                    href="https://discord.com/oauth2/authorize?client_id=1239680594539974787&permissions=274878417984&integration_type=0&scope=bot+applications.commands"
+                    href={LINKS.DISCORD_INVITE}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Invite
@@ -38,7 +39,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://docs.gridscout.xyz"
+                    href={LINKS.DOCS}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Documentation
@@ -47,7 +48,7 @@ const Footer = () => {
                 <li>
                   <Link
                     target="_blank"
-                    href="https://github.com/GridScout"
+                    href={LINKS.GITHUB}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     GitHub
@@ -70,7 +71,7 @@ const Footer = () => {
                 <li>
                   <Link
                     target="_blank"
-                    href="https://discord.gg/hNNaUGyTVz"
+                    href={LINKS.DISCORD_SUPPORT}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Discord Server
@@ -79,7 +80,7 @@ const Footer = () => {
                 <li>
                   <Link
                     target="_blank"
-                    href="mailto:max@maxmoon.sh"
+                    href={LINKS.EMAIL}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Contact Us
@@ -87,7 +88,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://status.gridscout.xyz"
+                    href={LINKS.STATUS}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Status
@@ -103,7 +104,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/terms"
+                    href={LINKS.TERMS_OF_SERVICE}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Terms of Service
@@ -111,7 +112,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/privacy"
+                    href={LINKS.PRIVACY_POLICY}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Privacy Policy

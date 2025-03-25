@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import { LINKS } from "~/lib/constants";
 
 const CtaSection = () => {
   return (
@@ -48,7 +49,7 @@ const CtaSection = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 target="_blank"
-                href="https://discord.com/oauth2/authorize?client_id=1239680594539974787&permissions=274878417984&integration_type=0&scope=bot+applications.commands"
+                href={LINKS.DISCORD_INVITE}
                 className="flex items-center justify-center space-x-2 rounded-md bg-gradient-to-r from-[#CF0A0B] to-[#95090A] px-6 py-3 font-medium text-white transition-all hover:bg-[#4752c4]"
               >
                 <svg
@@ -65,7 +66,7 @@ const CtaSection = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 target="_blank"
-                href="https://docs.gridscout.xyz"
+                href={LINKS.DOCS}
                 className="flex items-center justify-center rounded-md bg-[#353539] px-6 py-3 font-medium text-white transition-all hover:bg-gray-800"
               >
                 Read Documentation

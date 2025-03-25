@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { LINKS } from "~/lib/constants";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,7 +64,7 @@ const Header = () => {
     <>
       {/* Announcement Banner */}
       {showAnnouncement && (
-        <Link href="https://discord.gg/hNNaUGyTVz" target="_blank">
+        <Link href={LINKS.DISCORD_SUPPORT} target="_blank">
           <motion.div
             initial={{ opacity: 0, y: -28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -184,7 +185,7 @@ const Header = () => {
               whileTap={{ scale: 0.95 }}
             >
               <a
-                href="https://docs.gridscout.xyz"
+                href={LINKS.DOCS}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-normal text-white transition-colors hover:text-red-500"
@@ -200,7 +201,7 @@ const Header = () => {
               whileTap={{ scale: 0.95 }}
             >
               <a
-                href="https://status.gridscout.xyz"
+                href={LINKS.STATUS}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-normal text-white transition-colors hover:text-red-500"
@@ -219,14 +220,14 @@ const Header = () => {
           >
             <Link
               target="_blank"
-              href="https://discord.gg/hNNaUGyTVz"
+              href={LINKS.DISCORD_SUPPORT}
               className="font-medium text-white transition-colors hover:text-red-500"
             >
               Support Discord
             </Link>
             <motion.div whileHover={{ scale: 1.1, rotate: 5 }}>
               <Link
-                href="https://github.com/GridScout"
+                href={LINKS.GITHUB}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-normal text-white transition-colors"
@@ -251,7 +252,7 @@ const Header = () => {
           <div className="flex items-center space-x-4 md:hidden">
             <motion.div whileHover={{ scale: 1.1, rotate: 5 }} className="mr-2">
               <Link
-                href="https://github.com/GridScout"
+                href={LINKS.GITHUB}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-normal text-white transition-colors"
@@ -336,7 +337,7 @@ const Header = () => {
                     </span>
                   )}
                   <a
-                    href="https://docs.gridscout.xyz"
+                    href={LINKS.DOCS}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full py-2 font-normal text-white transition-colors hover:text-red-500"
@@ -345,7 +346,7 @@ const Header = () => {
                     Documentation
                   </a>
                   <a
-                    href="https://status.gridscout.xyz"
+                    href={LINKS.STATUS}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full py-2 font-normal text-white transition-colors hover:text-red-500"
@@ -354,7 +355,7 @@ const Header = () => {
                     Status
                   </a>
                   <Link
-                    href="https://discord.gg/hNNaUGyTVz"
+                    href={LINKS.DISCORD_SUPPORT}
                     className="block w-full py-2 font-normal text-white transition-colors hover:text-red-500"
                     onClick={() => setMobileMenuOpen(false)}
                   >

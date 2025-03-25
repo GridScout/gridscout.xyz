@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { LINKS } from "~/lib/constants";
 
 // Function to format number with K/M abbreviations
 const formatNumber = (num: number): string => {
@@ -85,7 +86,7 @@ const HeroSection = () => {
               >
                 <Link
                   target="_blank"
-                  href="https://discord.com/oauth2/authorize?client_id=1239680594539974787&permissions=274878417984&integration_type=0&scope=bot+applications.commands"
+                  href={LINKS.DISCORD_INVITE}
                   className="flex w-full items-center justify-center space-x-2 rounded-md bg-gradient-to-r from-[#CF0A0B] to-[#95090A] px-6 py-3 font-medium text-white transition-all hover:bg-[#4752c4]"
                 >
                   <svg

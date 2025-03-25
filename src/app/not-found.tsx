@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
+import { LINKS } from "~/lib/constants";
 
 export default function NotFound() {
   return (
@@ -50,7 +51,7 @@ export default function NotFound() {
             </Link>
             <Link
               target="_blank"
-              href="https://discord.gg/hNNaUGyTVz"
+              href={LINKS.DISCORD_SUPPORT}
               className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#353539] px-6 py-3 font-medium text-white transition duration-300 ease-out hover:from-[#CF0A0B] hover:to-[#95090A]"
             >
               <span className="relative">Support Server</span>
