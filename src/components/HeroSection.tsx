@@ -1,11 +1,44 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+// Function to format number with K/M abbreviations
+const formatNumber = (num: number): string => {
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+  }
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1).replace(/\.0$/, "") + "K";
+  }
+  return num.toString();
+};
+
 const HeroSection = () => {
+  const [guildCount, setGuildCount] = useState<number | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchGuildCount = async () => {
+      try {
+        const response = await fetch("/api/discord");
+        const data = await response.json();
+
+        if (data.success && data.guildCount) {
+          setGuildCount(data.guildCount);
+        }
+      } catch (error) {
+        console.error("Failed to fetch guild count:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchGuildCount();
+  }, []);
+
   return (
     <section className="relative overflow-hidden pt-2">
       <div className="container mx-auto px-8 py-20 md:py-28">
@@ -70,19 +103,30 @@ const HeroSection = () => {
                   transition={{ duration: 0.6, delay: 0.8 }}
                   className="mt-2 text-center text-sm text-gray-400"
                 >
-                  Join the other {/* TODO: Add the actual number of servers */}
-                  <motion.span
-                    animate={{
-                      opacity: [0.5, 1, 0.5],
-                    }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 1.5,
-                    }}
-                    className="text-[#FF2D2D]"
-                  >
-                    ...
-                  </motion.span>{" "}
+                  Join the other{" "}
+                  {loading ? (
+                    <motion.span
+                      animate={{
+                        opacity: [0.5, 1, 0.5],
+                      }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 1.5,
+                      }}
+                      className="text-[#FF2D2D]"
+                    >
+                      ...
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                      className="font-bold text-[#FF2D2D]"
+                    >
+                      {guildCount ? formatNumber(guildCount) : "many"}
+                    </motion.span>
+                  )}{" "}
                   servers!
                 </motion.p>
               </motion.div>
