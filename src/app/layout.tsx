@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { Poppins } from "next/font/google";
 import { type Metadata, type Viewport } from "next";
 import BackgroundGradients from "~/components/BackgroundGradients";
+import PlausibleProvider from "next-plausible";
 
 // Initialise Poppins font
 const poppins = Poppins({
@@ -156,11 +157,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable}`}>
       <head>
-        <script
-          defer
-          src="https://web.maxmoon.sh/script.js"
-          data-website-id="049d4079-3bec-476b-a28c-877dd19d999c"
-        ></script>
         {/* Schema.org structured data for rich search results */}
         <script
           type="application/ld+json"
@@ -170,8 +166,15 @@ export default function RootLayout({
         />
       </head>
       <body className="relative bg-background font-sans text-white">
-        <BackgroundGradients />
-        {children}
+        <PlausibleProvider
+          domain="gridscout.xyz"
+          customDomain="https://web.maxmoon.sh"
+          trackOutboundLinks
+          selfHosted
+        >
+          <BackgroundGradients />
+          {children}
+        </PlausibleProvider>
       </body>
     </html>
   );
