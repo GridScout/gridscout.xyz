@@ -8,4 +8,6 @@ import { withPlausibleProxy } from 'next-plausible';
 /** @type {import("next").NextConfig} */
 const config = {};
 
-export default withPlausibleProxy()(config);
+export default withPlausibleProxy({
+  customDomain: "https://gridscout.xyz",
+})(config);

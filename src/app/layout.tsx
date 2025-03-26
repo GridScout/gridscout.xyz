@@ -169,9 +169,7 @@ export default function RootLayout({
         <PlausibleProvider
           domain="gridscout.xyz"
           customDomain="https://web.maxmoon.sh"
-          trackLocalhost
           trackOutboundLinks
-          selfHosted
         >
           <BackgroundGradients />
           {children}
