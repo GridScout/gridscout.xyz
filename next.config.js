@@ -8,6 +8,4 @@ import { withPlausibleProxy } from 'next-plausible';
 /** @type {import("next").NextConfig} */
 const config = {};
 
-export default withPlausibleProxy({
-  customDomain: "https://web.maxmoon.sh",
-})(config);
+export default config
