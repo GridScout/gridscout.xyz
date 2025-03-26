@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { TrackedLink } from "~/components/TrackedLink";
 import { motion } from "framer-motion";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
@@ -49,13 +50,13 @@ export default function NotFound() {
             >
               <span className="relative">Back to Homepage</span>
             </Link>
-            <Link
+            <TrackedLink
               target="_blank"
               href={LINKS.DISCORD_SUPPORT}
               className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#353539] px-6 py-3 font-medium text-white transition duration-300 ease-out hover:from-[#CF0A0B] hover:to-[#95090A]"
             >
               <span className="relative">Support Server</span>
-            </Link>
+            </TrackedLink>
           </motion.div>
         </div>
       </main>

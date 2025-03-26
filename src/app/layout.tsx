@@ -165,8 +165,8 @@ export default function RootLayout({
         />
         <script
           defer
-          data-domain="gridscout.xyz"
-          src="https://web.maxmoon.sh/js/script.outbound-links.js"
+          src="https://web.maxmoon.sh/script.js"
+          data-website-id="049d4079-3bec-476b-a28c-877dd19d999c"
         ></script>
       </head>
       <body className="relative bg-background font-sans text-white">

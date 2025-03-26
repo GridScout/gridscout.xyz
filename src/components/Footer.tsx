@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TrackedLink } from "./TrackedLink";
 import Image from "next/image";
 import React from "react";
 import { LINKS } from "~/lib/constants";
@@ -29,30 +30,30 @@ const Footer = () => {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
+                  <TrackedLink
                     target="_blank"
                     href={LINKS.DISCORD_INVITE}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Invite
-                  </Link>
+                  </TrackedLink>
                 </li>
                 <li>
-                  <Link
+                  <TrackedLink
                     href={LINKS.DOCS}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Documentation
-                  </Link>
+                  </TrackedLink>
                 </li>
                 <li>
-                  <Link
+                  <TrackedLink
                     target="_blank"
                     href={LINKS.GITHUB}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     GitHub
-                  </Link>
+                  </TrackedLink>
                 </li>
                 {/* <li>
                   <Link
@@ -69,30 +70,30 @@ const Footer = () => {
               <h3 className="mb-4 text-lg font-semibold text-white">Support</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
+                  <TrackedLink
                     target="_blank"
                     href={LINKS.DISCORD_SUPPORT}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Discord Server
-                  </Link>
+                  </TrackedLink>
                 </li>
                 <li>
-                  <Link
+                  <TrackedLink
                     target="_blank"
                     href={LINKS.EMAIL}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Contact Us
-                  </Link>
+                  </TrackedLink>
                 </li>
                 <li>
-                  <Link
+                  <TrackedLink
                     href={LINKS.STATUS}
                     className="text-gray-400 transition-colors hover:text-white"
                   >
                     Status
-                  </Link>
+                  </TrackedLink>
                 </li>
               </ul>
             </div>

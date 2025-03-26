@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { TrackedLink } from "./TrackedLink";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -64,7 +65,7 @@ const Header = () => {
     <>
       {/* Announcement Banner */}
       {showAnnouncement && (
-        <Link href={LINKS.DISCORD_SUPPORT} target="_blank">
+        <TrackedLink href={LINKS.DISCORD_SUPPORT} target="_blank">
           <motion.div
             initial={{ opacity: 0, y: -28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -112,7 +113,7 @@ const Header = () => {
               </div>
             </div>
           </motion.div>
-        </Link>
+        </TrackedLink>
       )}
 
       <motion.header
@@ -218,16 +219,16 @@ const Header = () => {
             transition={{ delay: 0.2 }}
             className="hidden items-center space-x-4 md:flex"
           >
-            <Link
-              target="_blank"
+            <TrackedLink
               href={LINKS.DISCORD_SUPPORT}
+              target="_blank"
               className="font-medium text-white transition-colors hover:text-red-500"
             >
               Support Discord
-            </Link>
+            </TrackedLink>
             <motion.div whileHover={{ scale: 1.1, rotate: 5 }}>
-              <Link
-                href={LINKS.GITHUB}
+              <TrackedLink
+                href="https://github.com/GridScout"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-normal text-white transition-colors"
@@ -244,15 +245,15 @@ const Header = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </Link>
+              </TrackedLink>
             </motion.div>
           </motion.div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-4 md:hidden">
             <motion.div whileHover={{ scale: 1.1, rotate: 5 }} className="mr-2">
-              <Link
-                href={LINKS.GITHUB}
+              <TrackedLink
+                href="https://github.com/GridScout"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-normal text-white transition-colors"
@@ -269,7 +270,7 @@ const Header = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </Link>
+              </TrackedLink>
             </motion.div>
             <button
               onClick={toggleMobileMenu}
@@ -315,54 +316,36 @@ const Header = () => {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="border-t border-stroke bg-background bg-opacity-95 backdrop-blur-sm md:hidden"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute left-0 right-0 top-[72px] z-50 bg-[#26252C] p-4 shadow-lg"
             >
-              <div className="container mx-auto px-4 py-3">
-                <nav className="flex flex-col space-y-4 py-2">
-                  {isMounted ? (
-                    <a
-                      href="#features"
-                      onClick={scrollToFeatures}
-                      className="block w-full py-2 font-normal text-white transition-colors hover:text-red-500"
-                    >
-                      Features
-                    </a>
-                  ) : (
-                    <span className="block w-full py-2 font-normal text-white">
-                      Features
-                    </span>
-                  )}
-                  <a
-                    href={LINKS.DOCS}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full py-2 font-normal text-white transition-colors hover:text-red-500"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Documentation
-                  </a>
-                  <a
-                    href={LINKS.STATUS}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full py-2 font-normal text-white transition-colors hover:text-red-500"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Status
-                  </a>
-                  <Link
-                    href={LINKS.DISCORD_SUPPORT}
-                    className="block w-full py-2 font-normal text-white transition-colors hover:text-red-500"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Support Discord
-                  </Link>
-                </nav>
-              </div>
+              <nav className="flex flex-col space-y-4">
+                <TrackedLink
+                  href="/#features"
+                  onClick={scrollToFeatures}
+                  className="font-normal text-white transition-colors hover:text-red-500"
+                >
+                  Features
+                </TrackedLink>
+                <TrackedLink
+                  href="https://docs.gridscout.xyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-normal text-white transition-colors hover:text-red-500"
+                >
+                  Documentation
+                </TrackedLink>
+                <TrackedLink
+                  href="https://status.gridscout.xyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-normal text-white transition-colors hover:text-red-500"
+                >
+                  Status
+                </TrackedLink>
+              </nav>
             </motion.div>
           )}
         </AnimatePresence>

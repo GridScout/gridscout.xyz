@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { TrackedLink } from "./TrackedLink";
 import { motion } from "framer-motion";
 
 interface Race {
@@ -221,6 +222,17 @@ const RaceCountdown = () => {
             </div>
           </motion.div>
         </div>
+      </div>
+
+      <div className="mt-8 flex flex-col items-center justify-center space-y-4">
+        <TrackedLink
+          href="https://docs.gridscout.xyz/features/race-countdown"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-gray-400 transition-colors hover:text-white"
+        >
+          Learn more about race countdowns →
+        </TrackedLink>
       </div>
     </motion.div>
   );

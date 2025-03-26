@@ -3,7 +3,6 @@
  * for Docker builds.
  */
 import "./src/env.js";
-import { withPlausibleProxy } from 'next-plausible';
 
 /** @type {import("next").NextConfig} */
 const config = {};
