@@ -9,5 +9,5 @@ import { withPlausibleProxy } from 'next-plausible';
 const config = {};
 
 export default withPlausibleProxy({
-  customDomain: "https://gridscout.xyz",
+  customDomain: "https://web.maxmoon.sh",
 })(config);
