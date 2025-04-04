@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex items-center md:col-span-1">
               <div className="mr-3">
                 <Image
-                  src="/favicon.ico"
+                  src="/gridscout.png"
                   alt="GridScout Logo"
                   width={40}
                   height={40}

@@ -138,7 +138,7 @@ const Header = () => {
               className="mr-2"
             >
               <Image
-                src="/favicon.ico"
+                src="/gridscout.png"
                 alt="GridScout Logo"
                 width={32}
                 height={32}
