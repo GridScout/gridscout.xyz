@@ -19,7 +19,7 @@ const formatNumber = (num: number): string => {
 };
 
 const HeroSection = () => {
-  const [guildCount, setGuildCount] = useState<number | null>(null);
+  const [installCount, setInstallCount] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,8 +28,8 @@ const HeroSection = () => {
         const response = await fetch("/api/discord");
         const data = await response.json();
 
-        if (data.success && data.guildCount) {
-          setGuildCount(data.guildCount);
+        if (data.success && data.installCount) {
+          setInstallCount(data.installCount);
         }
       } catch (error) {
         console.error("Failed to fetch guild count:", error);
@@ -126,7 +126,7 @@ const HeroSection = () => {
                       transition={{ duration: 0.5 }}
                       className="font-bold text-[#FF2D2D]"
                     >
-                      {guildCount ? formatNumber(guildCount) : "many"}
+                      {installCount ? formatNumber(installCount) : "many"}
                     </motion.span>
                   )}{" "}
                   servers!

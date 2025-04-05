@@ -14,11 +14,13 @@ export async function GET() {
       "/applications/@me",
     )) as RESTGetCurrentApplicationResult;
 
-    const guildCount = appData.approximate_guild_count;
+    const installCount =
+      (appData.approximate_guild_count ?? 0) +
+      (appData.approximate_user_install_count ?? 0);
 
     return NextResponse.json({
       success: true,
-      guildCount,
+      installCount,
     });
   } catch (error) {
     console.error("Error fetching Discord data:", error);
